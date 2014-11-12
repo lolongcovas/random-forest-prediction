@@ -34,3 +34,7 @@ int label = forest.predict(X, probabilities);
 
 ...
 ````
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/lolongcovas/random-forest-prediction/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
