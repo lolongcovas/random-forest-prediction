@@ -1,9 +1,10 @@
 # Random Forest Prediction
-This project is random forest for prediction. The implementation is exact as the [Piotr Dollar's](https://github.com/pdollar/toolbox). In this directory include two files:
+It is light random forest for prediction. The implementation is exact as the [Piotr Dollar's](https://github.com/pdollar/toolbox). In this directory include two files:
 
 - forest.hpp: does random forest prediction (label and probabilities)
 - convertPiotrRF2Cpp.m: convert [Piotr Dollar's](https://github.com/pdollar/toolbox) random forest model into *.txt so that the previous C++ file could read it.
 
+This implementation requires much lower amoung memory for random forest model, does not like OpenCV version. This version requires x100 lesser than OpenCV
 
 # How to use
 
