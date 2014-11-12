@@ -25,6 +25,9 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#ifndef __FOREST_HPP__
+#define __FOREST_HPP__
+
 #include <istream>
 #include <iostream>
 #include <string>
@@ -33,6 +36,8 @@
 #include <vector>
 
 #include <omp.h>
+
+namespace RandomForest{
 
 class Tree{
 public:
@@ -218,10 +223,11 @@ public:
             trees[j].predict(data, probs + j * nLabels);
         }
 
-        for (int j=0; j<trees.size(); j++){
-            for (int k=0; k<nLabels; k++){
+        for (int k=0; k<nLabels; k++){
+            for (int j=0; j<trees.size(); j++){
                 prob[k] += probs[j * nLabels + k];
             }
+            prob[k] /= trees.size();
         }
 
         int label = 0;
@@ -236,3 +242,7 @@ public:
         return label;
     }
 };
+
+}
+
+#endif
